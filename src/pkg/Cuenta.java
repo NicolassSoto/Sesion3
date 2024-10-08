@@ -3,9 +3,18 @@ package pkg;
 public class Cuenta {
 
 	Double saldo;
+	String nombre;
+	String numero;
 	
 	public Cuenta(Double Saldo) {
 		this.saldo = Saldo;
+	}
+
+	public Cuenta(double d, String numero, String nombre) {
+		this.saldo = d;
+		this.numero = numero;
+		this.nombre = nombre;
+		// TODO Auto-generated constructor stub
 	}
 
 	public void setSaldo(Double saldo) {
@@ -22,7 +31,7 @@ public class Cuenta {
 	}
 
 	public void retirar(double d) {
-		// TODO Auto-generated method stub
+		this.saldo -= d;
 		
 	}
 	
