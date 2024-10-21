@@ -39,9 +39,21 @@ public class Cuenta {
 	}
 
 	public void retirar(double d) {
-		this.saldo -= d;
-		Transferencia t = new Transferencia(Transferencia.Tipo.Reintregro, d);
-		transferencias.add(t);
+		
+		double resultado = this.saldo - d;
+		
+		if(resultado < -500) {
+			Transferencia t = new Transferencia(Transferencia.Tipo.Error, d);
+			transferencias.add(t);
+			
+		}else {
+			this.saldo -= d;
+			Transferencia t = new Transferencia(Transferencia.Tipo.Reintregro, d);
+			transferencias.add(t);
+			
+		}
+		
+		
 		
 	}
 	

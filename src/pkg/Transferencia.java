@@ -2,7 +2,7 @@ package pkg;
 
 public class Transferencia {
 
-	enum Tipo{Ingreso, Reintregro, Inicial}
+	enum Tipo{Ingreso, Reintregro, Inicial, Error}
 	
 	Tipo tipo;
 	
@@ -49,6 +49,11 @@ public class Transferencia {
 		case Inicial:
 			transferencia = "Saldo inicial de " + cantidad + "€";
 			break;
+			
+		case Error:
+			transferencia = "Error al retirar " + cantidad + "€, fondos insuficientes";
+			break;
+			
 		default:
 			transferencia = "No válida";
 
