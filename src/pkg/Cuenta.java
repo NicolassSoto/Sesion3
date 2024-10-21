@@ -30,6 +30,8 @@ public class Cuenta {
 	public void ingresar(Double i) {
 		this.saldo = saldo + i;
 		
+		Transferencia t = new Transferencia(Transferencia.Tipo.Ingreso, i);
+		transferencias.add(t);
 	}
 
 	public Double getSaldo() {
@@ -38,6 +40,8 @@ public class Cuenta {
 
 	public void retirar(double d) {
 		this.saldo -= d;
+		Transferencia t = new Transferencia(Transferencia.Tipo.Reintregro, d);
+		transferencias.add(t);
 		
 	}
 	
