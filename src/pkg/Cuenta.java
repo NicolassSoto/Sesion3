@@ -1,10 +1,14 @@
 package pkg;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cuenta {
 
 	Double saldo;
 	String nombre;
 	String numero;
+	List<Transferencia> transferencias = new ArrayList<Transferencia>();
 	
 	public Cuenta(Double Saldo) {
 		this.saldo = Saldo;
@@ -14,7 +18,9 @@ public class Cuenta {
 		this.saldo = d;
 		this.numero = numero;
 		this.nombre = nombre;
-		// TODO Auto-generated constructor stub
+	
+		Transferencia t = new Transferencia(Transferencia.Tipo.Inicial, d);
+		transferencias.add(t);
 	}
 
 	public void setSaldo(Double saldo) {
@@ -34,5 +40,12 @@ public class Cuenta {
 		this.saldo -= d;
 		
 	}
+	
+	public void mostrarTransferencias() {
+		for(Transferencia t : transferencias) {
+			System.out.println(t);
+		}
+	}
+	
 	
 }

@@ -57,6 +57,10 @@ class CuentaTest {
 		System.out.println("Cuenta 12345: " + cuenta1.getSaldo());
 		System.out.println("Cuenta 67890: " + cuenta2.getSaldo());;
 	
+		System.out.println("\n Mostrar Transferencias Cuenta1: ");
+		cuenta1.mostrarTransferencias();
+		System.out.println("\n Mostrar Transferencias Cuenta1:");
+		cuenta2.mostrarTransferencias();
 		assertEquals(-250, cuenta1.getSaldo());
 		assertEquals(-450, cuenta2.getSaldo());
 		
