@@ -25,7 +25,7 @@ class CuentaTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		cuenta1 = new Cuenta(50d, "12345",  "Pepe");
-		cuenta1 = new Cuenta(50d, "67890",  "Juan");
+		cuenta2 = new Cuenta(50d, "67890",  "Juan");
 	}
 
 	@AfterEach
@@ -59,6 +59,7 @@ class CuentaTest {
 	
 		assertEquals(-250, cuenta1.getSaldo());
 		assertEquals(-450, cuenta2.getSaldo());
+		
 	}
 
 }
